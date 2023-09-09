@@ -1,7 +1,7 @@
 from kaggle_secrets import UserSecretsClient
 import wandb
 from pytorch_lightning.loggers import WandbLogger
-
+from pytorch_lightning.callbacks import ModelCheckpoint
 
 def setup_logger_hparams(logger, model, datamodule):
 
@@ -24,4 +24,8 @@ def setup_wandb(model, data_module):
 
     setup_logger_hparams(wandb_logger, model, data_module)
 
-    return wandb_logger
+    checkpoint_callback = ModelCheckpoint(monitor="r1txt_val", mode="max")
+    return wandb_logger,checkpoint_callback
+
+
+
