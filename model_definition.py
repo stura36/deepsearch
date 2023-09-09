@@ -1,7 +1,7 @@
 import torch.nn as nn
 from transformers import AutoModel, AutoTokenizer
 from torchvision.models import resnet50, ResNet50_Weights
-import lightning.pytorch as pl
+import pytorch_lightning as pl
 import torch
 from deepsearch.metrics import calc_r_at_k
 
