@@ -3,7 +3,7 @@ from transformers import AutoModel, AutoTokenizer
 from torchvision.models import resnet50, ResNet50_Weights
 import lightning.pytorch as pl
 import torch
-from . import calc_r_at_k
+from deepsearch.metrics import calc_r_at_k
 
 
 tokenizer = AutoTokenizer.from_pretrained("sentence-transformers/all-mpnet-base-v2")
