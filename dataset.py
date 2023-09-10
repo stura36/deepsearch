@@ -3,7 +3,7 @@ from torch.utils.data import Dataset, DataLoader
 from torchvision.io import read_image
 import random
 from random import randint
-import lightning.pytorch as pl
+import pytorch_lightning as pl
 from torch.utils.data import random_split
 import torch
 from torchvision.models import resnet50, ResNet50_Weights

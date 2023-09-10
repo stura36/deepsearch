@@ -2,7 +2,7 @@ import torch
 import torch.nn.init
 from torch.autograd import Variable
 from sentence_transformers import util
-import lightning.pytorch as pl
+import pytorch_lightning as pl
 
 
 class ContrastiveLoss(pl.LightningModule):
