@@ -1,0 +1,7 @@
+name: Trigger model training
+on: [push]
+jobs:
+  start_training:
+    runs-on: ubuntu-latest
+    steps:
+      - run: kaggle kernels push
