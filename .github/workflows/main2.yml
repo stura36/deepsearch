@@ -1,0 +1,24 @@
+on:
+  repository_dispatch:
+jobs:
+  get_new_model:
+    runs-on: ubuntu-latest
+    env:
+      WANDB_API_KEY: ${{ secrets.WANDB_API_KEY }}
+    steps:
+      - uses: actions/checkout@v3 
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11.4'
+          cache:  'pip'
+      - name: Install dependencies
+        run: pip install wandb
+      - name: Login to W&B
+        run: wandb login
+      - name: Fetch Artifact
+        run: python fetch_model_wb.py
+      
+        
+    
+  
