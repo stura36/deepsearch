@@ -1,5 +1,8 @@
 name: Trigger model training
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   start_training:
