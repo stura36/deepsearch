@@ -4,4 +4,5 @@ jobs:
   start_training:
     runs-on: ubuntu-latest
     steps:
+      - run: pip install kaggle
       - run: kaggle kernels push
