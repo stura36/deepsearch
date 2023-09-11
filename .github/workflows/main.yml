@@ -4,5 +4,7 @@ jobs:
   start_training:
     runs-on: ubuntu-latest
     steps:
+      - run: EXPORT KAGGLE_USERNAME=${{ secrets.KAGGLE_USERNAME }}
+      - run: EXPORT KAGGLE_KEY=${{ secrets.KAGGLE_KEY }}
       - run: pip install kaggle
       - run: kaggle kernels push
