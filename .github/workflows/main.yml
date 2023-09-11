@@ -7,8 +7,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          echo KAGGLE_USERNAME
-          echo KAGGLE_KEY
+          echo secrets.KAGGLE_USERNAME
+          echo secrets.KAGGLE_KEY
           export KAGGLE_USERNAME=secrets.KAGGLE_USERNAME
           export KAGGLE_KEY=secrets.KAGGLE_KEY
           pip install kaggle
