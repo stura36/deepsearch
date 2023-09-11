@@ -1,0 +1,16 @@
+name: Trigger model training
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  start_training:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          export KAGGLE_USERNAME=${{ secrets.KAGGLE_USERNAME }}
+          export KAGGLE_KEY=${{ secrets.KAGGLE_KEY }}
+          pip install kaggle
+          kaggle kernels push -p ./kaggle_kernel/
