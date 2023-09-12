@@ -18,6 +18,18 @@ jobs:
         run: wandb login
       - name: Fetch Artifact
         run: python fetch_model_wb.py
+      - name: Commit model
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add "artifacts"
+          git diff-index --quiet HEAD || (git commit -a -m "updated files" --allow-empty)
+      - name: Push model
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main 
+        
       
         
     
