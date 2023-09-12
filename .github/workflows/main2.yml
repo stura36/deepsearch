@@ -1,5 +1,4 @@
 on:
-  repository_dispatch:
   workflow_dispatch:
 jobs:
   get_new_model:
@@ -25,9 +24,8 @@ jobs:
           git add "artifacts"
           git diff-index --quiet HEAD || (git commit -a -m "updated files" --allow-empty)
       - name: Push model
-        uses: ad-m/github-push-action@v0.6.0
+        uses: actions/checkout@v3 
         with:
-          lfs: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main 
         
