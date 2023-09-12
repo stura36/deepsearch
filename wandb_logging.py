@@ -20,7 +20,7 @@ def setup_wandb(model, data_module):
     wandb_api_key = user_secrets.get_secret("wandb_api_key")
 
     wandb.login(key=wandb_api_key)
-    wandb_logger = WandbLogger(project="diplomski")
+    wandb_logger = WandbLogger(project="diplomski", log_model="all")
 
     setup_logger_hparams(wandb_logger, model, data_module)
 
